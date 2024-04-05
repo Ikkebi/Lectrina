@@ -30,65 +30,6 @@ __meta__ = {
 
 [node name="ChapterButtons" type="Node2D" parent="HomeScreen"]
 
-[node name="NavBarBackground" type="ColorRect" parent="HomeScreen/ChapterButtons"]
-margin_top = 908.0
-margin_right = 576.0
-margin_bottom = 1024.0
-
-[node name="HomeNav" type="Button" parent="HomeScreen/ChapterButtons"]
-margin_top = 908.0
-margin_right = 115.4
-margin_bottom = 1023.4
-action_mode = 0
-icon = ExtResource( 8 )
-flat = true
-icon_align = 1
-expand_icon = true
-
-[node name="TrainingNav" type="Button" parent="HomeScreen/ChapterButtons"]
-margin_left = 115.0
-margin_top = 908.0
-margin_right = 230.4
-margin_bottom = 1023.4
-action_mode = 0
-icon = ExtResource( 9 )
-flat = true
-icon_align = 1
-expand_icon = true
-
-[node name="BooksNav" type="Button" parent="HomeScreen/ChapterButtons"]
-margin_left = 230.0
-margin_top = 908.0
-margin_right = 345.4
-margin_bottom = 1023.4
-action_mode = 0
-icon = ExtResource( 7 )
-flat = true
-icon_align = 1
-expand_icon = true
-
-[node name="LeaderboardNav" type="Button" parent="HomeScreen/ChapterButtons"]
-margin_left = 345.0
-margin_top = 908.0
-margin_right = 460.4
-margin_bottom = 1023.4
-action_mode = 0
-icon = ExtResource( 10 )
-flat = true
-icon_align = 1
-expand_icon = true
-
-[node name="ProfileNav" type="Button" parent="HomeScreen/ChapterButtons"]
-margin_left = 460.0
-margin_top = 908.0
-margin_right = 575.4
-margin_bottom = 1023.4
-action_mode = 0
-icon = ExtResource( 11 )
-flat = true
-icon_align = 1
-expand_icon = true
-
 [node name="Training" parent="." instance=ExtResource( 2 )]
 
 [node name="Books" parent="." instance=ExtResource( 1 )]
@@ -103,3 +44,64 @@ expand_icon = true
 position = Vector2( 1873, 521 )
 scale = Vector2( 1.89726, 1.86686 )
 texture = ExtResource( 6 )
+
+[node name="NavBar" type="Node2D" parent="."]
+
+[node name="NavBarBackground" type="ColorRect" parent="NavBar"]
+margin_top = 908.0
+margin_right = 576.0
+margin_bottom = 1024.0
+
+[node name="HomeNav" type="Button" parent="NavBar"]
+margin_top = 908.0
+margin_right = 115.4
+margin_bottom = 1023.4
+action_mode = 0
+icon = ExtResource( 8 )
+flat = true
+icon_align = 1
+expand_icon = true
+
+[node name="TrainingNav" type="Button" parent="NavBar"]
+margin_left = 115.0
+margin_top = 908.0
+margin_right = 230.4
+margin_bottom = 1023.4
+action_mode = 0
+icon = ExtResource( 9 )
+flat = true
+icon_align = 1
+expand_icon = true
+
+[node name="BooksNav" type="Button" parent="NavBar"]
+margin_left = 230.0
+margin_top = 908.0
+margin_right = 345.4
+margin_bottom = 1023.4
+action_mode = 0
+icon = ExtResource( 7 )
+flat = true
+icon_align = 1
+expand_icon = true
+
+[node name="LeaderboardNav" type="Button" parent="NavBar"]
+margin_left = 345.0
+margin_top = 908.0
+margin_right = 460.4
+margin_bottom = 1023.4
+action_mode = 0
+icon = ExtResource( 10 )
+flat = true
+icon_align = 1
+expand_icon = true
+
+[node name="ProfileNav" type="Button" parent="NavBar"]
+margin_left = 460.0
+margin_top = 908.0
+margin_right = 575.4
+margin_bottom = 1023.4
+action_mode = 0
+icon = ExtResource( 11 )
+flat = true
+icon_align = 1
+expand_icon = true
