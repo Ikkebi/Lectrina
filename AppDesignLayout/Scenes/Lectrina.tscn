@@ -352,7 +352,7 @@ texture = ExtResource( 21 )
 
 [node name="ProfileXP" type="Node2D" parent="Leaderboard/PlaceProfiles"]
 
-[node name="Place1" type="Label" parent="Leaderboard/PlaceProfiles/ProfileXP"]
+[node name="xp1" type="Label" parent="Leaderboard/PlaceProfiles/ProfileXP"]
 margin_left = 446.0
 margin_top = 111.0
 margin_right = 1807.0
@@ -362,7 +362,7 @@ custom_fonts/font = SubResource( 1 )
 text = "int xp
 "
 
-[node name="Place2" type="Label" parent="Leaderboard/PlaceProfiles/ProfileXP"]
+[node name="xp2" type="Label" parent="Leaderboard/PlaceProfiles/ProfileXP"]
 margin_left = 446.0
 margin_top = 211.0
 margin_right = 1807.0
@@ -372,7 +372,7 @@ custom_fonts/font = SubResource( 1 )
 text = "int xp
 "
 
-[node name="Place3" type="Label" parent="Leaderboard/PlaceProfiles/ProfileXP"]
+[node name="xp3" type="Label" parent="Leaderboard/PlaceProfiles/ProfileXP"]
 margin_left = 446.0
 margin_top = 311.0
 margin_right = 1807.0
@@ -382,7 +382,7 @@ custom_fonts/font = SubResource( 1 )
 text = "int xp
 "
 
-[node name="Place4" type="Label" parent="Leaderboard/PlaceProfiles/ProfileXP"]
+[node name="xp4" type="Label" parent="Leaderboard/PlaceProfiles/ProfileXP"]
 margin_left = 446.0
 margin_top = 410.0
 margin_right = 1807.0
@@ -392,7 +392,7 @@ custom_fonts/font = SubResource( 1 )
 text = "int xp
 "
 
-[node name="Place5" type="Label" parent="Leaderboard/PlaceProfiles/ProfileXP"]
+[node name="xp5" type="Label" parent="Leaderboard/PlaceProfiles/ProfileXP"]
 margin_left = 446.0
 margin_top = 511.0
 margin_right = 1807.0
@@ -402,7 +402,7 @@ custom_fonts/font = SubResource( 1 )
 text = "int xp
 "
 
-[node name="Place6" type="Label" parent="Leaderboard/PlaceProfiles/ProfileXP"]
+[node name="xp6" type="Label" parent="Leaderboard/PlaceProfiles/ProfileXP"]
 margin_left = 446.0
 margin_top = 611.0
 margin_right = 1807.0
@@ -412,7 +412,7 @@ custom_fonts/font = SubResource( 1 )
 text = "int xp
 "
 
-[node name="Place7" type="Label" parent="Leaderboard/PlaceProfiles/ProfileXP"]
+[node name="xp7" type="Label" parent="Leaderboard/PlaceProfiles/ProfileXP"]
 margin_left = 446.0
 margin_top = 711.0
 margin_right = 1807.0
@@ -422,7 +422,7 @@ custom_fonts/font = SubResource( 1 )
 text = "int xp
 "
 
-[node name="Place8" type="Label" parent="Leaderboard/PlaceProfiles/ProfileXP"]
+[node name="xp8" type="Label" parent="Leaderboard/PlaceProfiles/ProfileXP"]
 margin_left = 446.0
 margin_top = 811.0
 margin_right = 1807.0
