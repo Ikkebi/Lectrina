@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Scenes/Books.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Training.tscn" type="PackedScene" id=2]
@@ -21,6 +21,8 @@
 [ext_resource path="res://Scenes/temp (filtrer gennem inden aflevering for ubrugte assets)/logo2.png" type="Texture" id=19]
 [ext_resource path="res://Scenes/temp (filtrer gennem inden aflevering for ubrugte assets)/logo1.png" type="Texture" id=20]
 [ext_resource path="res://Scenes/temp (filtrer gennem inden aflevering for ubrugte assets)/ProfilePicOutline.png" type="Texture" id=21]
+[ext_resource path="res://Scenes/temp (filtrer gennem inden aflevering for ubrugte assets)/StatBox.png" type="Texture" id=22]
+[ext_resource path="res://Scenes/temp (filtrer gennem inden aflevering for ubrugte assets)/ProfilePicOutlineBig.png" type="Texture" id=23]
 
 [sub_resource type="DynamicFont" id=1]
 size = 500
@@ -35,7 +37,6 @@ font_data = ExtResource( 14 )
 [node name="ColorRect" type="ColorRect" parent="BackGround"]
 margin_right = 576.0
 margin_bottom = 1024.0
-color = Color( 0.176471, 0.368627, 0.643137, 1 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -62,6 +63,7 @@ margin_left = 75.0
 margin_top = 96.0
 margin_right = 210.0
 margin_bottom = 228.0
+rect_pivot_offset = Vector2( -222, 115 )
 icon = ExtResource( 18 )
 flat = true
 expand_icon = true
@@ -219,6 +221,7 @@ position = Vector2( 419, 684 )
 texture = ExtResource( 17 )
 
 [node name="Leaderboard" parent="." instance=ExtResource( 5 )]
+visible = false
 
 [node name="PlaceProfiles" type="Node2D" parent="Leaderboard"]
 
@@ -508,7 +511,190 @@ custom_fonts/font = SubResource( 1 )
 text = "8"
 
 [node name="Profile" parent="." instance=ExtResource( 3 )]
-visible = false
+
+[node name="ProfPic" type="Sprite" parent="Profile"]
+position = Vector2( 288, 284 )
+scale = Vector2( 1.28615, 1.28615 )
+texture = ExtResource( 23 )
+
+[node name="SeparatingLine" type="Line2D" parent="Profile"]
+position = Vector2( 106, 289 )
+scale = Vector2( 0.9, 1 )
+points = PoolVector2Array( -81, 201, 202, 201, 485, 201 )
+width = 5.0
+default_color = Color( 0, 0, 0, 1 )
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="SeparatingLine2" type="Line2D" parent="Profile"]
+position = Vector2( 106, 657 )
+scale = Vector2( 0.9, 1 )
+points = PoolVector2Array( -81, 201, 202, 201, 485, 201 )
+width = 5.0
+default_color = Color( 0, 0, 0, 1 )
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="StatisticsTitle" type="Label" parent="Profile"]
+margin_left = 33.0
+margin_top = 512.0
+margin_right = 2394.0
+margin_bottom = 1132.0
+rect_scale = Vector2( 0.085, 0.085 )
+custom_fonts/font = SubResource( 1 )
+text = "Statistik"
+
+[node name="StatBoxes" type="Node2D" parent="Profile"]
+position = Vector2( 33, 463 )
+scale = Vector2( 0.085, 0.085 )
+
+[node name="Statbox1" type="Sprite" parent="Profile/StatBoxes"]
+position = Vector2( 917.727, 2069.44 )
+scale = Vector2( 3.42966, 3.42966 )
+texture = ExtResource( 22 )
+
+[node name="StatboxTitle1" type="Label" parent="Profile/StatBoxes/Statbox1"]
+margin_left = -168.107
+margin_top = 72.369
+margin_right = 2416.89
+margin_bottom = 692.369
+rect_scale = Vector2( 0.125, 0.125 )
+custom_fonts/font = SubResource( 1 )
+text = "Bøger læst"
+
+[node name="Statbox2" type="Sprite" parent="Profile/StatBoxes"]
+position = Vector2( 2971.01, 2069.44 )
+scale = Vector2( 3.42966, 3.42966 )
+texture = ExtResource( 22 )
+
+[node name="StatboxTitle2" type="Label" parent="Profile/StatBoxes/Statbox2"]
+margin_left = -190.504
+margin_top = 72.3691
+margin_right = 2840.5
+margin_bottom = 692.369
+rect_scale = Vector2( 0.125, 0.125 )
+custom_fonts/font = SubResource( 1 )
+text = "Kapitler læst"
+
+[node name="Statbox3" type="Sprite" parent="Profile/StatBoxes"]
+position = Vector2( 5023.53, 2069.44 )
+scale = Vector2( 3.42966, 3.42966 )
+texture = ExtResource( 22 )
+
+[node name="StatboxTitle3" type="Label" parent="Profile/StatBoxes/Statbox3"]
+margin_left = -106.338
+margin_top = 72.3691
+margin_right = 2254.66
+margin_bottom = 692.369
+rect_scale = Vector2( 0.125, 0.125 )
+custom_fonts/font = SubResource( 1 )
+text = "Streak"
+
+[node name="Statbox4" type="Sprite" parent="Profile/StatBoxes"]
+position = Vector2( 917.727, 3551.79 )
+scale = Vector2( 3.42966, 3.42966 )
+texture = ExtResource( 22 )
+
+[node name="StatboxTitle4" type="Label" parent="Profile/StatBoxes/Statbox4"]
+margin_left = -126.944
+margin_top = 72.3691
+margin_right = 2234.06
+margin_bottom = 692.369
+rect_scale = Vector2( 0.125, 0.125 )
+custom_fonts/font = SubResource( 1 )
+text = "xp point"
+
+[node name="Statbox5" type="Sprite" parent="Profile/StatBoxes"]
+position = Vector2( 2971.01, 3551.8 )
+scale = Vector2( 3.42966, 3.42966 )
+texture = ExtResource( 22 )
+
+[node name="StatboxTitle5" type="Label" parent="Profile/StatBoxes/Statbox5"]
+margin_left = -217.946
+margin_top = 72.3691
+margin_right = 3312.05
+margin_bottom = 692.369
+rect_scale = Vector2( 0.125, 0.125 )
+custom_fonts/font = SubResource( 1 )
+text = "Opgaver klaret"
+
+[node name="Statbox6" type="Sprite" parent="Profile/StatBoxes"]
+position = Vector2( 5023.53, 3551.8 )
+scale = Vector2( 3.42966, 3.42966 )
+texture = ExtResource( 22 )
+
+[node name="StatboxTitle6" type="Label" parent="Profile/StatBoxes/Statbox6"]
+margin_left = -219.537
+margin_top = 20.9141
+margin_right = 3279.46
+margin_bottom = 1263.91
+rect_scale = Vector2( 0.125, 0.125 )
+custom_fonts/font = SubResource( 1 )
+text = "Gennemsnit
+Kapitler/dag"
+align = 1
+
+[node name="StatLabels" type="Node2D" parent="Profile"]
+
+[node name="BooksReadStat" type="Label" parent="Profile/StatLabels"]
+margin_left = 11.0
+margin_top = 602.0
+margin_right = 2372.0
+margin_bottom = 1222.0
+rect_scale = Vector2( 0.085, 0.085 )
+custom_fonts/font = SubResource( 1 )
+text = "int"
+align = 1
+
+[node name="ChaptersReadStat" type="Label" parent="Profile/StatLabels"]
+margin_left = 187.0
+margin_top = 602.0
+margin_right = 2548.0
+margin_bottom = 1222.0
+rect_scale = Vector2( 0.085, 0.085 )
+custom_fonts/font = SubResource( 1 )
+text = "int"
+align = 1
+
+[node name="StreakStat" type="Label" parent="Profile/StatLabels"]
+margin_left = 363.0
+margin_top = 602.0
+margin_right = 2724.0
+margin_bottom = 1222.0
+rect_scale = Vector2( 0.085, 0.085 )
+custom_fonts/font = SubResource( 1 )
+text = "int"
+align = 1
+
+[node name="xpStat" type="Label" parent="Profile/StatLabels"]
+margin_left = 11.0
+margin_top = 731.0
+margin_right = 2372.0
+margin_bottom = 1351.0
+rect_scale = Vector2( 0.085, 0.085 )
+custom_fonts/font = SubResource( 1 )
+text = "int"
+align = 1
+
+[node name="TasksCompletedStat" type="Label" parent="Profile/StatLabels"]
+margin_left = 187.0
+margin_top = 731.0
+margin_right = 2548.0
+margin_bottom = 1351.0
+rect_scale = Vector2( 0.085, 0.085 )
+custom_fonts/font = SubResource( 1 )
+text = "int"
+align = 1
+
+[node name="AverageChaptersDailyStat" type="Label" parent="Profile/StatLabels"]
+margin_left = 363.0
+margin_top = 731.0
+margin_right = 2724.0
+margin_bottom = 1351.0
+rect_scale = Vector2( 0.085, 0.085 )
+custom_fonts/font = SubResource( 1 )
+text = "int"
+align = 1
 
 [node name="NavBar" type="Node2D" parent="."]
 __meta__ = {
@@ -519,6 +705,7 @@ __meta__ = {
 margin_top = 908.0
 margin_right = 576.0
 margin_bottom = 1024.0
+color = Color( 0.301961, 0.631373, 0.662745, 1 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -598,6 +785,7 @@ __meta__ = {
 [node name="TopBarBackground" type="ColorRect" parent="TopBar"]
 margin_right = 576.0
 margin_bottom = 75.0
+color = Color( 0.301961, 0.631373, 0.662745, 1 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -634,13 +822,14 @@ custom_fonts/font = SubResource( 1 )
 text = "Bog-Navn"
 
 [node name="Streak" type="Label" parent="TopBar"]
-margin_left = 419.0
+margin_left = 281.0
 margin_top = 11.0
-margin_right = 2780.0
+margin_right = 2642.0
 margin_bottom = 631.0
 rect_scale = Vector2( 0.085, 0.085 )
 custom_fonts/font = SubResource( 1 )
 text = "int"
+align = 2
 
 [node name="Prototype" type="Sprite" parent="."]
 position = Vector2( 1833.17, 515.442 )
