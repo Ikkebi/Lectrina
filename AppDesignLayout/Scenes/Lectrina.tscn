@@ -35,7 +35,6 @@ __meta__ = {
 }
 
 [node name="HomeScreen" parent="." instance=ExtResource( 4 )]
-visible = false
 
 [node name="Books" parent="." instance=ExtResource( 1 )]
 visible = false
@@ -47,6 +46,7 @@ visible = false
 visible = false
 
 [node name="Profile" parent="." instance=ExtResource( 3 )]
+visible = false
 
 [node name="NavBar" type="Node2D" parent="."]
 __meta__ = {
