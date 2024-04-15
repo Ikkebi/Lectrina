@@ -1,11 +1,11 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Scenes/Books.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Training.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Profile.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/HomeScreen.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Friends.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Scenes/temp/Prototype.png" type="Texture" id=6]
+[ext_resource path="res://Scenes/temp (filtrer gennem inden aflevering for ubrugte assets)/Prototype.png" type="Texture" id=6]
 [ext_resource path="res://Scenes/temp (filtrer gennem inden aflevering for ubrugte assets)/BooksNav.png" type="Texture" id=7]
 [ext_resource path="res://Scenes/temp (filtrer gennem inden aflevering for ubrugte assets)/HomeNav.png" type="Texture" id=8]
 [ext_resource path="res://Scenes/temp (filtrer gennem inden aflevering for ubrugte assets)/TrainingNav.png" type="Texture" id=9]
@@ -14,6 +14,13 @@
 [ext_resource path="res://Scenes/temp (filtrer gennem inden aflevering for ubrugte assets)/BookTop.png" type="Texture" id=12]
 [ext_resource path="res://Scenes/temp (filtrer gennem inden aflevering for ubrugte assets)/FlameTop.png" type="Texture" id=13]
 [ext_resource path="res://Scenes/temp (filtrer gennem inden aflevering for ubrugte assets)/UniversBold.ttf" type="DynamicFontData" id=14]
+[ext_resource path="res://Scenes/temp (filtrer gennem inden aflevering for ubrugte assets)/TrainingQuestion.png" type="Texture" id=15]
+[ext_resource path="res://Scenes/temp (filtrer gennem inden aflevering for ubrugte assets)/TrainingAnswer.png" type="Texture" id=16]
+[ext_resource path="res://Scenes/temp (filtrer gennem inden aflevering for ubrugte assets)/BookCover.png" type="Texture" id=17]
+[ext_resource path="res://Scenes/temp (filtrer gennem inden aflevering for ubrugte assets)/ChapterButton.png" type="Texture" id=18]
+[ext_resource path="res://Scenes/temp (filtrer gennem inden aflevering for ubrugte assets)/logo2.png" type="Texture" id=19]
+[ext_resource path="res://Scenes/temp (filtrer gennem inden aflevering for ubrugte assets)/logo1.png" type="Texture" id=20]
+[ext_resource path="res://Scenes/temp (filtrer gennem inden aflevering for ubrugte assets)/ProfilePicOutline.png" type="Texture" id=21]
 
 [sub_resource type="DynamicFont" id=1]
 size = 500
@@ -34,27 +41,479 @@ __meta__ = {
 }
 
 [node name="HomeScreen" parent="." instance=ExtResource( 4 )]
+visible = false
 
 [node name="AsigmentMaskot" type="Node2D" parent="HomeScreen"]
 
+[node name="Sprite" type="Sprite" parent="HomeScreen/AsigmentMaskot"]
+position = Vector2( 339, 228 )
+scale = Vector2( 0.936124, 0.936124 )
+texture = ExtResource( 20 )
+
+[node name="Sprite2" type="Sprite" parent="HomeScreen/AsigmentMaskot"]
+position = Vector2( 215, 624 )
+scale = Vector2( 0.88587, 0.88587 )
+texture = ExtResource( 19 )
+
 [node name="ChapterButtons" type="Node2D" parent="HomeScreen"]
 
+[node name="Button" type="Button" parent="HomeScreen/ChapterButtons"]
+margin_left = 75.0
+margin_top = 96.0
+margin_right = 210.0
+margin_bottom = 228.0
+icon = ExtResource( 18 )
+flat = true
+expand_icon = true
+
+[node name="Button2" type="Button" parent="HomeScreen/ChapterButtons"]
+margin_left = 75.0
+margin_top = 228.0
+margin_right = 210.0
+margin_bottom = 360.0
+icon = ExtResource( 18 )
+flat = true
+expand_icon = true
+
+[node name="Button3" type="Button" parent="HomeScreen/ChapterButtons"]
+margin_left = 75.0
+margin_top = 360.0
+margin_right = 210.0
+margin_bottom = 492.0
+icon = ExtResource( 18 )
+flat = true
+expand_icon = true
+
+[node name="Button4" type="Button" parent="HomeScreen/ChapterButtons"]
+margin_left = 210.0
+margin_top = 360.0
+margin_right = 345.0
+margin_bottom = 492.0
+icon = ExtResource( 18 )
+flat = true
+expand_icon = true
+
+[node name="Button5" type="Button" parent="HomeScreen/ChapterButtons"]
+margin_left = 345.0
+margin_top = 360.0
+margin_right = 480.0
+margin_bottom = 492.0
+icon = ExtResource( 18 )
+flat = true
+expand_icon = true
+
+[node name="Button6" type="Button" parent="HomeScreen/ChapterButtons"]
+margin_left = 345.0
+margin_top = 492.0
+margin_right = 480.0
+margin_bottom = 624.0
+icon = ExtResource( 18 )
+flat = true
+expand_icon = true
+
+[node name="Button7" type="Button" parent="HomeScreen/ChapterButtons"]
+margin_left = 345.0
+margin_top = 624.0
+margin_right = 480.0
+margin_bottom = 756.0
+icon = ExtResource( 18 )
+flat = true
+expand_icon = true
+
+[node name="Button8" type="Button" parent="HomeScreen/ChapterButtons"]
+margin_left = 345.0
+margin_top = 756.0
+margin_right = 480.0
+margin_bottom = 888.0
+icon = ExtResource( 18 )
+flat = true
+expand_icon = true
+
+[node name="Button9" type="Button" parent="HomeScreen/ChapterButtons"]
+margin_left = 210.0
+margin_top = 756.0
+margin_right = 345.0
+margin_bottom = 888.0
+icon = ExtResource( 18 )
+flat = true
+expand_icon = true
+
+[node name="Button10" type="Button" parent="HomeScreen/ChapterButtons"]
+margin_left = 80.0
+margin_top = 756.0
+margin_right = 215.0
+margin_bottom = 888.0
+icon = ExtResource( 18 )
+flat = true
+expand_icon = true
+
 [node name="Training" parent="." instance=ExtResource( 2 )]
+visible = false
+
+[node name="Button" type="Button" parent="Training"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 70.0
+margin_top = 228.0
+margin_right = 508.0
+margin_bottom = 553.0
+icon = ExtResource( 15 )
+flat = true
+expand_icon = true
+
+[node name="Button2" type="Button" parent="Training"]
+margin_left = 70.0
+margin_top = 553.0
+margin_right = 289.0
+margin_bottom = 634.0
+icon = ExtResource( 16 )
+flat = true
+expand_icon = true
+
+[node name="Button3" type="Button" parent="Training"]
+margin_left = 289.0
+margin_top = 553.0
+margin_right = 508.0
+margin_bottom = 634.0
+icon = ExtResource( 16 )
+flat = true
+expand_icon = true
+
+[node name="Button4" type="Button" parent="Training"]
+margin_left = 290.0
+margin_top = 657.0
+margin_right = 509.0
+margin_bottom = 738.0
+icon = ExtResource( 16 )
+flat = true
+expand_icon = true
+
+[node name="Button5" type="Button" parent="Training"]
+margin_left = 71.0
+margin_top = 657.0
+margin_right = 290.0
+margin_bottom = 738.0
+icon = ExtResource( 16 )
+flat = true
+expand_icon = true
 
 [node name="Books" parent="." instance=ExtResource( 1 )]
+visible = false
 
-[node name="Friends" parent="." instance=ExtResource( 5 )]
+[node name="Book1" type="Sprite" parent="Books"]
+position = Vector2( 158, 305 )
+texture = ExtResource( 17 )
+
+[node name="Book2" type="Sprite" parent="Books"]
+position = Vector2( 419, 305 )
+texture = ExtResource( 17 )
+
+[node name="Book3" type="Sprite" parent="Books"]
+position = Vector2( 158, 684 )
+texture = ExtResource( 17 )
+
+[node name="Book4" type="Sprite" parent="Books"]
+position = Vector2( 419, 684 )
+texture = ExtResource( 17 )
+
+[node name="Leaderboard" parent="." instance=ExtResource( 5 )]
+
+[node name="PlaceProfiles" type="Node2D" parent="Leaderboard"]
+
+[node name="ProfileNames" type="Node2D" parent="Leaderboard/PlaceProfiles"]
+position = Vector2( 1.52588e-05, 1.52588e-05 )
+scale = Vector2( 1, 1 )
+
+[node name="ProfName1" type="Label" parent="Leaderboard/PlaceProfiles/ProfileNames"]
+margin_left = 150.0
+margin_top = 111.0
+margin_right = 3040.0
+margin_bottom = 1354.0
+rect_scale = Vector2( 0.085, 0.085 )
+custom_fonts/font = SubResource( 1 )
+text = "Navn-String
+"
+
+[node name="ProfName2" type="Label" parent="Leaderboard/PlaceProfiles/ProfileNames"]
+margin_left = 150.0
+margin_top = 211.0
+margin_right = 3040.0
+margin_bottom = 1454.0
+rect_scale = Vector2( 0.085, 0.085 )
+custom_fonts/font = SubResource( 1 )
+text = "Navn-String
+"
+
+[node name="ProfName3" type="Label" parent="Leaderboard/PlaceProfiles/ProfileNames"]
+margin_left = 150.0
+margin_top = 311.0
+margin_right = 3040.0
+margin_bottom = 1554.0
+rect_scale = Vector2( 0.085, 0.085 )
+custom_fonts/font = SubResource( 1 )
+text = "Navn-String
+"
+
+[node name="ProfName4" type="Label" parent="Leaderboard/PlaceProfiles/ProfileNames"]
+margin_left = 150.0
+margin_top = 411.0
+margin_right = 3040.0
+margin_bottom = 1654.0
+rect_scale = Vector2( 0.085, 0.085 )
+custom_fonts/font = SubResource( 1 )
+text = "Navn-String
+"
+
+[node name="ProfName5" type="Label" parent="Leaderboard/PlaceProfiles/ProfileNames"]
+margin_left = 150.0
+margin_top = 511.0
+margin_right = 3040.0
+margin_bottom = 1754.0
+rect_scale = Vector2( 0.085, 0.085 )
+custom_fonts/font = SubResource( 1 )
+text = "Navn-String
+"
+
+[node name="ProfName6" type="Label" parent="Leaderboard/PlaceProfiles/ProfileNames"]
+margin_left = 150.0
+margin_top = 611.0
+margin_right = 3040.0
+margin_bottom = 1854.0
+rect_scale = Vector2( 0.085, 0.085 )
+custom_fonts/font = SubResource( 1 )
+text = "Navn-String
+"
+
+[node name="ProfName7" type="Label" parent="Leaderboard/PlaceProfiles/ProfileNames"]
+margin_left = 150.0
+margin_top = 711.0
+margin_right = 3040.0
+margin_bottom = 1954.0
+rect_scale = Vector2( 0.085, 0.085 )
+custom_fonts/font = SubResource( 1 )
+text = "Navn-String
+"
+
+[node name="ProfName8" type="Label" parent="Leaderboard/PlaceProfiles/ProfileNames"]
+margin_left = 150.0
+margin_top = 811.0
+margin_right = 3040.0
+margin_bottom = 2054.0
+rect_scale = Vector2( 0.085, 0.085 )
+custom_fonts/font = SubResource( 1 )
+text = "Navn-String
+"
+
+[node name="ProfilePictures" type="Node2D" parent="Leaderboard/PlaceProfiles"]
+position = Vector2( 150, 111 )
+scale = Vector2( 0.085, 0.085 )
+
+[node name="ProfPic1" type="Sprite" parent="Leaderboard/PlaceProfiles/ProfilePictures"]
+position = Vector2( -635.294, 317.647 )
+scale = Vector2( 3.70133, 3.70133 )
+texture = ExtResource( 21 )
+
+[node name="ProfPic2" type="Sprite" parent="Leaderboard/PlaceProfiles/ProfilePictures"]
+position = Vector2( -635.294, 1494.12 )
+scale = Vector2( 3.70133, 3.70133 )
+texture = ExtResource( 21 )
+
+[node name="ProfPic3" type="Sprite" parent="Leaderboard/PlaceProfiles/ProfilePictures"]
+position = Vector2( -635.294, 2670.59 )
+scale = Vector2( 3.70133, 3.70133 )
+texture = ExtResource( 21 )
+
+[node name="ProfPic4" type="Sprite" parent="Leaderboard/PlaceProfiles/ProfilePictures"]
+position = Vector2( -635.294, 3847.06 )
+scale = Vector2( 3.70133, 3.70133 )
+texture = ExtResource( 21 )
+
+[node name="ProfPic5" type="Sprite" parent="Leaderboard/PlaceProfiles/ProfilePictures"]
+position = Vector2( -635.294, 5023.53 )
+scale = Vector2( 3.70133, 3.70133 )
+texture = ExtResource( 21 )
+
+[node name="ProfPic6" type="Sprite" parent="Leaderboard/PlaceProfiles/ProfilePictures"]
+position = Vector2( -635.294, 6200 )
+scale = Vector2( 3.70133, 3.70133 )
+texture = ExtResource( 21 )
+
+[node name="ProfPic7" type="Sprite" parent="Leaderboard/PlaceProfiles/ProfilePictures"]
+position = Vector2( -635.294, 7376.47 )
+scale = Vector2( 3.70133, 3.70133 )
+texture = ExtResource( 21 )
+
+[node name="ProfPic8" type="Sprite" parent="Leaderboard/PlaceProfiles/ProfilePictures"]
+position = Vector2( -635.294, 8552.94 )
+scale = Vector2( 3.70133, 3.70133 )
+texture = ExtResource( 21 )
+
+[node name="ProfileXP" type="Node2D" parent="Leaderboard/PlaceProfiles"]
+
+[node name="Place1" type="Label" parent="Leaderboard/PlaceProfiles/ProfileXP"]
+margin_left = 446.0
+margin_top = 111.0
+margin_right = 1807.0
+margin_bottom = 1354.0
+rect_scale = Vector2( 0.085, 0.085 )
+custom_fonts/font = SubResource( 1 )
+text = "int xp
+"
+
+[node name="Place2" type="Label" parent="Leaderboard/PlaceProfiles/ProfileXP"]
+margin_left = 446.0
+margin_top = 211.0
+margin_right = 1807.0
+margin_bottom = 1454.0
+rect_scale = Vector2( 0.085, 0.085 )
+custom_fonts/font = SubResource( 1 )
+text = "int xp
+"
+
+[node name="Place3" type="Label" parent="Leaderboard/PlaceProfiles/ProfileXP"]
+margin_left = 446.0
+margin_top = 311.0
+margin_right = 1807.0
+margin_bottom = 1554.0
+rect_scale = Vector2( 0.085, 0.085 )
+custom_fonts/font = SubResource( 1 )
+text = "int xp
+"
+
+[node name="Place4" type="Label" parent="Leaderboard/PlaceProfiles/ProfileXP"]
+margin_left = 446.0
+margin_top = 410.0
+margin_right = 1807.0
+margin_bottom = 1653.0
+rect_scale = Vector2( 0.085, 0.085 )
+custom_fonts/font = SubResource( 1 )
+text = "int xp
+"
+
+[node name="Place5" type="Label" parent="Leaderboard/PlaceProfiles/ProfileXP"]
+margin_left = 446.0
+margin_top = 511.0
+margin_right = 1807.0
+margin_bottom = 1754.0
+rect_scale = Vector2( 0.085, 0.085 )
+custom_fonts/font = SubResource( 1 )
+text = "int xp
+"
+
+[node name="Place6" type="Label" parent="Leaderboard/PlaceProfiles/ProfileXP"]
+margin_left = 446.0
+margin_top = 611.0
+margin_right = 1807.0
+margin_bottom = 1854.0
+rect_scale = Vector2( 0.085, 0.085 )
+custom_fonts/font = SubResource( 1 )
+text = "int xp
+"
+
+[node name="Place7" type="Label" parent="Leaderboard/PlaceProfiles/ProfileXP"]
+margin_left = 446.0
+margin_top = 711.0
+margin_right = 1807.0
+margin_bottom = 1954.0
+rect_scale = Vector2( 0.085, 0.085 )
+custom_fonts/font = SubResource( 1 )
+text = "int xp
+"
+
+[node name="Place8" type="Label" parent="Leaderboard/PlaceProfiles/ProfileXP"]
+margin_left = 446.0
+margin_top = 811.0
+margin_right = 1807.0
+margin_bottom = 2054.0
+rect_scale = Vector2( 0.085, 0.085 )
+custom_fonts/font = SubResource( 1 )
+text = "int xp
+"
+
+[node name="PlacePos" type="Node2D" parent="Leaderboard"]
+
+[node name="Place1" type="Label" parent="Leaderboard/PlacePos"]
+margin_left = 15.0
+margin_top = 111.0
+margin_right = 309.0
+margin_bottom = 1354.0
+rect_scale = Vector2( 0.085, 0.085 )
+custom_fonts/font = SubResource( 1 )
+text = "1
+"
+
+[node name="Place2" type="Label" parent="Leaderboard/PlacePos"]
+margin_left = 15.0
+margin_top = 211.0
+margin_right = 309.0
+margin_bottom = 1454.0
+rect_scale = Vector2( 0.085, 0.085 )
+custom_fonts/font = SubResource( 1 )
+text = "2"
+
+[node name="Place3" type="Label" parent="Leaderboard/PlacePos"]
+margin_left = 15.0
+margin_top = 311.0
+margin_right = 309.0
+margin_bottom = 1554.0
+rect_scale = Vector2( 0.085, 0.085 )
+custom_fonts/font = SubResource( 1 )
+text = "3"
+
+[node name="Place4" type="Label" parent="Leaderboard/PlacePos"]
+margin_left = 15.0
+margin_top = 410.0
+margin_right = 309.0
+margin_bottom = 1653.0
+rect_scale = Vector2( 0.085, 0.085 )
+custom_fonts/font = SubResource( 1 )
+text = "4"
+
+[node name="Place5" type="Label" parent="Leaderboard/PlacePos"]
+margin_left = 15.0
+margin_top = 511.0
+margin_right = 309.0
+margin_bottom = 1754.0
+rect_scale = Vector2( 0.085, 0.085 )
+custom_fonts/font = SubResource( 1 )
+text = "5"
+
+[node name="Place6" type="Label" parent="Leaderboard/PlacePos"]
+margin_left = 15.0
+margin_top = 611.0
+margin_right = 309.0
+margin_bottom = 1854.0
+rect_scale = Vector2( 0.085, 0.085 )
+custom_fonts/font = SubResource( 1 )
+text = "6"
+
+[node name="Place7" type="Label" parent="Leaderboard/PlacePos"]
+margin_left = 15.0
+margin_top = 711.0
+margin_right = 309.0
+margin_bottom = 1954.0
+rect_scale = Vector2( 0.085, 0.085 )
+custom_fonts/font = SubResource( 1 )
+text = "7"
+
+[node name="Place8" type="Label" parent="Leaderboard/PlacePos"]
+margin_left = 15.0
+margin_top = 811.0
+margin_right = 309.0
+margin_bottom = 2054.0
+rect_scale = Vector2( 0.085, 0.085 )
+custom_fonts/font = SubResource( 1 )
+text = "8"
 
 [node name="Profile" parent="." instance=ExtResource( 3 )]
-
-[node name="Taskbar" type="Node2D" parent="."]
-
-[node name="Prototype" type="Sprite" parent="."]
-position = Vector2( 1855.07, 513.474 )
-scale = Vector2( 1.92559, 1.89474 )
-texture = ExtResource( 6 )
+visible = false
 
 [node name="NavBar" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="NavBarBackground" type="ColorRect" parent="NavBar"]
 margin_top = 908.0
@@ -132,6 +591,7 @@ expand_icon = true
 
 [node name="TopBar" type="Node2D" parent="."]
 __meta__ = {
+"_edit_lock_": true,
 "_editor_description_": ""
 }
 
@@ -181,3 +641,8 @@ margin_bottom = 631.0
 rect_scale = Vector2( 0.085, 0.085 )
 custom_fonts/font = SubResource( 1 )
 text = "int"
+
+[node name="Prototype" type="Sprite" parent="."]
+position = Vector2( 1833.17, 515.442 )
+scale = Vector2( 1.88355, 1.88355 )
+texture = ExtResource( 6 )
