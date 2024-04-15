@@ -4,7 +4,7 @@
 [ext_resource path="res://Scenes/temp (filtrer gennem inden aflevering for ubrugte assets)/logo2.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/temp (filtrer gennem inden aflevering for ubrugte assets)/ChapterButton.png" type="Texture" id=3]
 
-[node name="HomeScreenTest" type="Control"]
+[node name="HomeScreen" type="Control"]
 margin_right = 576.0
 margin_bottom = 1024.0
 
