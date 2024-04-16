@@ -24,7 +24,7 @@ $password = $_POST["password"];
 // Vi kører en SQL query for at finde brugeren med det indtastede brugernavn
 $statement = database()->prepare("SELECT * FROM user WHERE username = ?");
 $statement->execute([$username]);
-$db_user = $statement->fetch();
+$db_user = $statement->fetch(PDO::FETCH_ASSOC);
 
 // Vi tjekker om brugeren findes og om deres password er korrekt
 if (!$db_user || !password_verify($password, $db_user["password"])) {
@@ -51,8 +51,20 @@ if (!$result) {
     die();
 }
 
+require_once "../includes/utils/streakchecker.php";
+
+$streak_checker = new StreakChecker($db_user);
+$streak_checker->check(true);
+
+if ($streak_checker->isExpired()) {
+    $streak = 0;
+} else {
+    $streak = $db_user["streak"];
+}
+
 // Send token tilbage til godot
 echo json_encode([
     "status" => true,
     "token" => $token,
+    "streak" => $streak,
 ]);

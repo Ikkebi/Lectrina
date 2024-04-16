@@ -4,7 +4,7 @@ require_once "../includes/database.php";
 
 require_once "../includes/require_token.php";
 
-$books = database()->query("SELECT * FROM book")->fetchAll();
+$books = database()->query("SELECT * FROM book")->fetchAll(PDO::FETCH_ASSOC);
 
 $formatted_books = [];
 

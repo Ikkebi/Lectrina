@@ -1,5 +1,7 @@
 <?php
 
+global $user;
+
 require_once "database.php";
 
 if (!isset($_SERVER["HTTP_X_TOKEN"])) {
@@ -21,7 +23,7 @@ SQL
 );
 
 $statement->execute([$token]);
-$user = $statement->fetch();
+$user = $statement->fetch(PDO::FETCH_ASSOC);
 
 if (!$user) {
     echo json_encode([

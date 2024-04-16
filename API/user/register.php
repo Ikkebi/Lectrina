@@ -24,7 +24,7 @@ $password = $_POST["password"];
 $statement = database()->prepare("SELECT * FROM user WHERE username = ?");
 $statement->execute([$username]);
 
-if ($statement->fetch()) {
+if ($statement->fetch(PDO::FETCH_ASSOC)) {
     echo json_encode([
         "status" => false,
         "message" => "A user with this username already exists!",
