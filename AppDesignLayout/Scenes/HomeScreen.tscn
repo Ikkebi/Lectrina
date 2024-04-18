@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Scenes/temp (filtrer gennem inden aflevering for ubrugte assets)/logo1.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/temp (filtrer gennem inden aflevering for ubrugte assets)/logo2.png" type="Texture" id=2]
-[ext_resource path="res://Scenes/temp (filtrer gennem inden aflevering for ubrugte assets)/ChapterButton.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/temp (filtrer gennem inden aflevering for ubrugte assets)/ChapterButtonInvisible.png" type="Texture" id=3]
 [ext_resource path="res://Scenes/ScrollContainer.gd" type="Script" id=4]
 
 [sub_resource type="StyleBoxEmpty" id=1]
@@ -59,7 +59,7 @@ margin_right = 33.0
 margin_bottom = 125.0
 mouse_filter = 1
 
-[node name="Button" type="Button" parent="ScrollContainer/GridContainer"]
+[node name="Chapter1" type="Button" parent="ScrollContainer/GridContainer"]
 margin_left = 66.0
 margin_right = 191.0
 margin_bottom = 125.0
@@ -108,7 +108,7 @@ margin_right = 33.0
 margin_bottom = 283.0
 mouse_filter = 1
 
-[node name="Button4" type="Button" parent="ScrollContainer/GridContainer"]
+[node name="Chapter2" type="Button" parent="ScrollContainer/GridContainer"]
 margin_left = 66.0
 margin_top = 158.0
 margin_right = 191.0
@@ -162,7 +162,7 @@ margin_right = 33.0
 margin_bottom = 441.0
 mouse_filter = 1
 
-[node name="Button7" type="Button" parent="ScrollContainer/GridContainer"]
+[node name="Chapter3" type="Button" parent="ScrollContainer/GridContainer"]
 margin_left = 66.0
 margin_top = 316.0
 margin_right = 191.0
@@ -174,7 +174,7 @@ icon = ExtResource( 3 )
 flat = true
 expand_icon = true
 
-[node name="Button8" type="Button" parent="ScrollContainer/GridContainer"]
+[node name="Chapter4" type="Button" parent="ScrollContainer/GridContainer"]
 margin_left = 224.0
 margin_top = 316.0
 margin_right = 349.0
@@ -186,7 +186,7 @@ icon = ExtResource( 3 )
 flat = true
 expand_icon = true
 
-[node name="Button9" type="Button" parent="ScrollContainer/GridContainer"]
+[node name="Chapter5" type="Button" parent="ScrollContainer/GridContainer"]
 margin_left = 382.0
 margin_top = 316.0
 margin_right = 507.0
@@ -240,7 +240,7 @@ margin_bottom = 599.0
 rect_min_size = Vector2( 125, 125 )
 mouse_filter = 1
 
-[node name="Button12" type="Button" parent="ScrollContainer/GridContainer"]
+[node name="Chapter6" type="Button" parent="ScrollContainer/GridContainer"]
 margin_left = 382.0
 margin_top = 474.0
 margin_right = 507.0
@@ -294,7 +294,7 @@ margin_bottom = 757.0
 rect_min_size = Vector2( 125, 125 )
 mouse_filter = 1
 
-[node name="Button15" type="Button" parent="ScrollContainer/GridContainer"]
+[node name="Chapter7" type="Button" parent="ScrollContainer/GridContainer"]
 margin_left = 382.0
 margin_top = 632.0
 margin_right = 507.0
@@ -332,7 +332,7 @@ margin_right = 33.0
 margin_bottom = 915.0
 mouse_filter = 1
 
-[node name="Button16" type="Button" parent="ScrollContainer/GridContainer"]
+[node name="Chapter10" type="Button" parent="ScrollContainer/GridContainer"]
 margin_left = 66.0
 margin_top = 790.0
 margin_right = 191.0
@@ -344,7 +344,7 @@ icon = ExtResource( 3 )
 flat = true
 expand_icon = true
 
-[node name="Button17" type="Button" parent="ScrollContainer/GridContainer"]
+[node name="Chapter9" type="Button" parent="ScrollContainer/GridContainer"]
 margin_left = 224.0
 margin_top = 790.0
 margin_right = 349.0
@@ -356,7 +356,7 @@ icon = ExtResource( 3 )
 flat = true
 expand_icon = true
 
-[node name="Button18" type="Button" parent="ScrollContainer/GridContainer"]
+[node name="Chapter8" type="Button" parent="ScrollContainer/GridContainer"]
 margin_left = 382.0
 margin_top = 790.0
 margin_right = 507.0
@@ -394,7 +394,7 @@ margin_right = 33.0
 margin_bottom = 1073.0
 mouse_filter = 1
 
-[node name="Button19" type="Button" parent="ScrollContainer/GridContainer"]
+[node name="Chapter11" type="Button" parent="ScrollContainer/GridContainer"]
 margin_left = 66.0
 margin_top = 948.0
 margin_right = 191.0
@@ -448,7 +448,7 @@ margin_right = 33.0
 margin_bottom = 1231.0
 mouse_filter = 1
 
-[node name="Button22" type="Button" parent="ScrollContainer/GridContainer"]
+[node name="Chapter12" type="Button" parent="ScrollContainer/GridContainer"]
 margin_left = 66.0
 margin_top = 1106.0
 margin_right = 191.0
@@ -502,7 +502,7 @@ margin_right = 33.0
 margin_bottom = 1389.0
 mouse_filter = 1
 
-[node name="Button25" type="Button" parent="ScrollContainer/GridContainer"]
+[node name="Chapter13" type="Button" parent="ScrollContainer/GridContainer"]
 margin_left = 66.0
 margin_top = 1264.0
 margin_right = 191.0
@@ -514,7 +514,7 @@ icon = ExtResource( 3 )
 flat = true
 expand_icon = true
 
-[node name="Button26" type="Button" parent="ScrollContainer/GridContainer"]
+[node name="Chapter14" type="Button" parent="ScrollContainer/GridContainer"]
 margin_left = 224.0
 margin_top = 1264.0
 margin_right = 349.0
@@ -526,7 +526,7 @@ icon = ExtResource( 3 )
 flat = true
 expand_icon = true
 
-[node name="Button27" type="Button" parent="ScrollContainer/GridContainer"]
+[node name="Chapter15" type="Button" parent="ScrollContainer/GridContainer"]
 margin_left = 382.0
 margin_top = 1264.0
 margin_right = 507.0
@@ -580,7 +580,7 @@ margin_bottom = 1547.0
 rect_min_size = Vector2( 125, 125 )
 mouse_filter = 1
 
-[node name="Button30" type="Button" parent="ScrollContainer/GridContainer"]
+[node name="Chapter16" type="Button" parent="ScrollContainer/GridContainer"]
 margin_left = 382.0
 margin_top = 1422.0
 margin_right = 507.0
@@ -634,7 +634,7 @@ margin_bottom = 1705.0
 rect_min_size = Vector2( 125, 125 )
 mouse_filter = 1
 
-[node name="Button33" type="Button" parent="ScrollContainer/GridContainer"]
+[node name="Chapter17" type="Button" parent="ScrollContainer/GridContainer"]
 margin_left = 382.0
 margin_top = 1580.0
 margin_right = 507.0
@@ -672,7 +672,7 @@ margin_right = 33.0
 margin_bottom = 1863.0
 mouse_filter = 1
 
-[node name="Button34" type="Button" parent="ScrollContainer/GridContainer"]
+[node name="Chapter20" type="Button" parent="ScrollContainer/GridContainer"]
 margin_left = 66.0
 margin_top = 1738.0
 margin_right = 191.0
@@ -684,7 +684,7 @@ icon = ExtResource( 3 )
 flat = true
 expand_icon = true
 
-[node name="Button35" type="Button" parent="ScrollContainer/GridContainer"]
+[node name="Chapter19" type="Button" parent="ScrollContainer/GridContainer"]
 margin_left = 224.0
 margin_top = 1738.0
 margin_right = 349.0
@@ -696,7 +696,7 @@ icon = ExtResource( 3 )
 flat = true
 expand_icon = true
 
-[node name="Button36" type="Button" parent="ScrollContainer/GridContainer"]
+[node name="Chapter18" type="Button" parent="ScrollContainer/GridContainer"]
 margin_left = 382.0
 margin_top = 1738.0
 margin_right = 507.0

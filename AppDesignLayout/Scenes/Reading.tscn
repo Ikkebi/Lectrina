@@ -1,0 +1,118 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Scenes/ScrollContainer.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/temp (filtrer gennem inden aflevering for ubrugte assets)/UniversBold.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://icon.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/Reading.gd" type="Script" id=4]
+[ext_resource path="res://Scenes/ChapterAssignment.tscn" type="PackedScene" id=5]
+
+[sub_resource type="DynamicFont" id=2]
+size = 40
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=1]
+size = 22
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 2 )
+
+[node name="Reading" type="Control"]
+margin_right = 576.0
+margin_bottom = 1024.0
+script = ExtResource( 4 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer"]
+margin_right = 576.0
+margin_bottom = 1024.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 20
+
+[node name="filler" type="Control" parent="ScrollContainer/HBoxContainer"]
+margin_bottom = 1024.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer/HBoxContainer"]
+margin_left = 20.0
+margin_right = 556.0
+margin_bottom = 1024.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 50
+
+[node name="Control" type="Control" parent="ScrollContainer/HBoxContainer/VBoxContainer"]
+margin_right = 536.0
+
+[node name="Title" type="RichTextLabel" parent="ScrollContainer/HBoxContainer/VBoxContainer"]
+margin_top = 50.0
+margin_right = 536.0
+margin_bottom = 101.0
+mouse_filter = 1
+size_flags_horizontal = 3
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = SubResource( 2 )
+bbcode_enabled = true
+bbcode_text = "[center]Chapter 1[/center]"
+meta_underlined = false
+text = "Chapter 1"
+fit_content_height = true
+
+[node name="Text" type="RichTextLabel" parent="ScrollContainer/HBoxContainer/VBoxContainer"]
+margin_top = 151.0
+margin_right = 536.0
+margin_bottom = 904.0
+mouse_filter = 1
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = SubResource( 1 )
+bbcode_enabled = true
+bbcode_text = "[fill]sd[/fill]"
+meta_underlined = false
+text = "sd"
+fit_content_height = true
+
+[node name="FinishBtn" type="Button" parent="ScrollContainer/HBoxContainer/VBoxContainer"]
+margin_top = 954.0
+margin_right = 536.0
+margin_bottom = 974.0
+text = "Done reading"
+
+[node name="Control2" type="Control" parent="ScrollContainer/HBoxContainer/VBoxContainer"]
+margin_top = 1024.0
+margin_right = 536.0
+margin_bottom = 1024.0
+
+[node name="filler2" type="Control" parent="ScrollContainer/HBoxContainer"]
+margin_left = 576.0
+margin_right = 576.0
+margin_bottom = 1024.0
+
+[node name="ChapterAssignment" parent="." instance=ExtResource( 5 )]
+visible = false
+
+[node name="Exit" type="Button" parent="."]
+margin_left = 473.0
+margin_top = 8.0
+margin_right = 549.0
+margin_bottom = 78.0
+icon = ExtResource( 3 )
+
+[node name="HTTPGetChapter" type="HTTPRequest" parent="."]
+
+[node name="HTTPCompleteChapter" type="HTTPRequest" parent="."]
+
+[connection signal="pressed" from="ScrollContainer/HBoxContainer/VBoxContainer/FinishBtn" to="." method="on_finish_reading"]
+[connection signal="pressed" from="Exit" to="." method="_on_Exit_pressed"]
+[connection signal="request_completed" from="HTTPGetChapter" to="." method="on_chapter_loaded"]
+[connection signal="request_completed" from="HTTPCompleteChapter" to="." method="on_complete_chapter_response"]

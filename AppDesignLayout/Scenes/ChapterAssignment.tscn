@@ -1,0 +1,80 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scenes/temp (filtrer gennem inden aflevering for ubrugte assets)/TrainingQuestion.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/temp (filtrer gennem inden aflevering for ubrugte assets)/TrainingAnswer.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/ChapterAssignment.gd" type="Script" id=3]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[node name="ChapterAssignment" type="Control"]
+margin_right = 576.0
+margin_bottom = 1024.0
+script = ExtResource( 3 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Question" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -218.0
+margin_top = -284.0
+margin_right = 220.0
+margin_bottom = 41.0
+custom_styles/focus = SubResource( 1 )
+icon = ExtResource( 1 )
+flat = true
+icon_align = 1
+expand_icon = true
+
+[node name="Answer1" type="Button" parent="."]
+margin_left = 70.0
+margin_top = 553.0
+margin_right = 289.0
+margin_bottom = 634.0
+custom_styles/focus = SubResource( 1 )
+icon = ExtResource( 2 )
+flat = true
+icon_align = 1
+expand_icon = true
+
+[node name="Answer2" type="Button" parent="."]
+margin_left = 289.0
+margin_top = 553.0
+margin_right = 508.0
+margin_bottom = 634.0
+custom_styles/focus = SubResource( 1 )
+icon = ExtResource( 2 )
+flat = true
+icon_align = 1
+expand_icon = true
+
+[node name="Answer3" type="Button" parent="."]
+margin_left = 71.0
+margin_top = 657.0
+margin_right = 290.0
+margin_bottom = 738.0
+custom_styles/focus = SubResource( 1 )
+icon = ExtResource( 2 )
+flat = true
+icon_align = 1
+expand_icon = true
+
+[node name="Answer4" type="Button" parent="."]
+margin_left = 290.0
+margin_top = 657.0
+margin_right = 509.0
+margin_bottom = 738.0
+custom_styles/focus = SubResource( 1 )
+icon = ExtResource( 2 )
+flat = true
+icon_align = 1
+expand_icon = true
+
+[connection signal="pressed" from="Answer1" to="." method="on_answer_pressed" binds= [ 1 ]]
+[connection signal="pressed" from="Answer2" to="." method="on_answer_pressed" binds= [ 2 ]]
+[connection signal="pressed" from="Answer3" to="." method="on_answer_pressed" binds= [ 3 ]]
+[connection signal="pressed" from="Answer4" to="." method="on_answer_pressed" binds= [ 4 ]]

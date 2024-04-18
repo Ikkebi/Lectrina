@@ -1,0 +1,55 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scenes/Login.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/LoginButton.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/LoginRequest.gd" type="Script" id=3]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect"]
+margin_left = 45.0
+margin_top = 208.0
+margin_right = 530.0
+margin_bottom = 723.0
+
+[node name="UsernameTitle" type="Label" parent="ColorRect/VBoxContainer"]
+margin_right = 485.0
+margin_bottom = 14.0
+
+[node name="Username" type="LineEdit" parent="ColorRect/VBoxContainer"]
+margin_top = 18.0
+margin_right = 485.0
+margin_bottom = 42.0
+
+[node name="PasswordTitle" type="Label" parent="ColorRect/VBoxContainer"]
+margin_top = 46.0
+margin_right = 485.0
+margin_bottom = 60.0
+
+[node name="Password" type="LineEdit" parent="ColorRect/VBoxContainer"]
+margin_top = 64.0
+margin_right = 485.0
+margin_bottom = 88.0
+
+[node name="LoginButton" type="Button" parent="ColorRect/VBoxContainer"]
+margin_top = 92.0
+margin_right = 485.0
+margin_bottom = 112.0
+script = ExtResource( 2 )
+
+[node name="RegisterButton" type="Button" parent="ColorRect/VBoxContainer"]
+margin_top = 116.0
+margin_right = 485.0
+margin_bottom = 136.0
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+script = ExtResource( 3 )
+
+[connection signal="pressed" from="ColorRect/VBoxContainer/LoginButton" to="." method="_on_LoginButton_pressed"]
