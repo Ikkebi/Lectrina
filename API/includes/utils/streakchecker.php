@@ -1,15 +1,18 @@
 <?php
 
-require_once "../database.php";
+require_once __DIR__ . "/../database.php";
 
 class StreakChecker {
+    private array $user;
+
     private bool $is_expired   = false;
     private bool $is_increased = true;
-    private ?int $new_streak = null;
+    private ?int $new_streak   = null;
 
     public function __construct(
-        private array $user,
+        array $user
     ) {
+        $this->user = $user;
     }
 
     private function updateDatabase(): bool {
@@ -32,18 +35,23 @@ class StreakChecker {
     }
 
     public function check(bool $is_login): bool {
-        $last_streak_date = \DateTime::createFromFormat("TODO", $this->user["last_streak_date"]);
-        $today            = new DateTime();
+        $last_streak_date = \DateTime::createFromFormat("Y-m-d", $this->user["last_streak_date"]);
 
-        $days_between = $last_streak_date->diff($today)->days;
-
-        if ($days_between === 1) {
+        if (!$last_streak_date) {
             $this->is_increased = true;
-        } else if ($days_between > 1) {
-            $this->is_expired = true;
         } else {
-            // samme dato
-            return true;
+            $today            = new DateTime();
+
+            $days_between = $last_streak_date->diff($today)->days;
+
+            if ($days_between === 1) {
+                $this->is_increased = true;
+            } else if ($days_between > 1) {
+                $this->is_expired = true;
+            } else {
+                // samme dato
+                return true;
+            }
         }
 
         if ($this->is_increased && $is_login) {

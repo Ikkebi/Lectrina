@@ -16,10 +16,11 @@ if (!isset($_GET["book_id"])) {
 
 $book_id = $_GET["book_id"];
 
-$statement = database()->prepare("SELECT COUNT(*) FROM book WHERE id = ?");
+$statement = database()->prepare("SELECT * FROM book WHERE id = ?");
 $statement->execute([$book_id]);
+$book = $statement->fetch(PDO::FETCH_ASSOC);
 
-if (!$statement->fetchColumn()) {
+if (!$book) {
     echo json_encode([
         "status" => false,
         "message" => "That book does not exist!",
@@ -49,5 +50,6 @@ foreach ($chapters as &$chapter) {
 
 echo json_encode([
     "status" => true,
+    "name" => $book["name"],
     "chapters" => $chapters,
 ]);

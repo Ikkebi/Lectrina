@@ -1,7 +1,6 @@
 <?php
 
 require_once "../includes/database.php";
-
 require_once "../includes/require_token.php";
 
 if (!isset($_GET["chapter_id"])) {
@@ -25,7 +24,7 @@ if (!$statement->fetchColumn()) {
     die();
 }
 
-$statement = database()->prepare("SELECT id, name, content FROM chapter WHERE id = ?");
+$statement = database()->prepare("SELECT name, content FROM chapter WHERE id = ?");
 $statement->execute([$chapter_id]);
 $chapter = $statement->fetch(PDO::FETCH_ASSOC);
 
@@ -37,7 +36,14 @@ if (!$chapter) {
     die();
 }
 
+$statement = database()->prepare("SELECT question, answer1, answer2, answer3, answer4, correct_answer FROM assignment_chapter WHERE chapter_id = ?");
+$statement->execute([$chapter_id]);
+$assignment = $statement->fetch(PDO::FETCH_ASSOC) ?: null;
+
+$assignment["correct_answer"] = (int)$assignment["correct_answer"];
+
 echo json_encode([
     "status" => true,
     "chapter" => $chapter,
+    "assignment" => $assignment,
 ]);

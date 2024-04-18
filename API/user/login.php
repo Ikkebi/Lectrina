@@ -66,5 +66,6 @@ if ($streak_checker->isExpired()) {
 echo json_encode([
     "status" => true,
     "token" => $token,
-    "streak" => $streak,
+    "streak" => $streak ?? 0,
+    "active_book_id" => (int)$db_user["active_book_id"],
 ]);

@@ -10,11 +10,11 @@ $formatted_books = [];
 
 foreach ($books as $book) {
     $formatted_books[] = [
-        "id" => $book["id"],
+        "id" => (int)$book["id"],
         "name" => $book["name"],
-        "cover" => base64_encode($book["cover"]),
         "author" => $book["author"],
         "isbn" => $book["isbn"],
+        "cover_url" => $book["cover_url"],
     ];
 }
 

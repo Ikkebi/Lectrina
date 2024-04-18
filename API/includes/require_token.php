@@ -2,7 +2,7 @@
 
 global $user;
 
-require_once "database.php";
+require_once __DIR__ . "/database.php";
 
 if (!isset($_SERVER["HTTP_X_TOKEN"])) {
     echo json_encode([

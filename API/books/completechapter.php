@@ -1,8 +1,8 @@
 <?php
 
-require_once "../includes/database.php";
+require_once __DIR__ . "/../includes/database.php";
 
-require_once "../includes/require_token.php";
+require_once __DIR__ . "/../includes/require_token.php";
 
 const EXP_GIVEN_FOR_CHAPTER = 100;
 
