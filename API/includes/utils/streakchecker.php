@@ -6,7 +6,7 @@ class StreakChecker {
     private array $user;
 
     private bool $is_expired   = false;
-    private bool $is_increased = true;
+    private bool $is_increased = false;
     private ?int $new_streak   = null;
 
     public function __construct(

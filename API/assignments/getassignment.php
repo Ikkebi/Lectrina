@@ -26,6 +26,7 @@ $assignment = $statement->fetch(PDO::FETCH_ASSOC) ?: null;
 if ($assignment) {
     $assignment["id"] = (int)$assignment["id"];
     $assignment["exp"] = (int)$assignment["exp"];
+    $assignment["correct_answer"] = (int)$assignment["correct_answer"];
 }
 
 echo json_encode([

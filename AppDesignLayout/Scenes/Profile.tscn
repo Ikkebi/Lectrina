@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scenes/temp (filtrer gennem inden aflevering for ubrugte assets)/StatBox.png" type="Texture" id=1]
-[ext_resource path="res://Scenes/temp (filtrer gennem inden aflevering for ubrugte assets)/ProfilePicOutlineBig.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/Profile.gd" type="Script" id=2]
 [ext_resource path="res://Scenes/temp (filtrer gennem inden aflevering for ubrugte assets)/UniversBold.ttf" type="DynamicFontData" id=3]
 
 [sub_resource type="DynamicFont" id=1]
@@ -13,14 +13,10 @@ font_data = ExtResource( 3 )
 [node name="Profile" type="Control"]
 margin_right = 40.0
 margin_bottom = 40.0
-
-[node name="ProfPic" type="Sprite" parent="."]
-position = Vector2( 288, 284 )
-scale = Vector2( 1.28615, 1.28615 )
-texture = ExtResource( 2 )
+script = ExtResource( 2 )
 
 [node name="SeparatingLine" type="Line2D" parent="."]
-position = Vector2( 106, 289 )
+position = Vector2( 106, 130 )
 scale = Vector2( 0.9, 1 )
 points = PoolVector2Array( -81, 201, 202, 201, 485, 201 )
 width = 5.0
@@ -29,7 +25,7 @@ begin_cap_mode = 2
 end_cap_mode = 2
 
 [node name="SeparatingLine2" type="Line2D" parent="."]
-position = Vector2( 106, 657 )
+position = Vector2( 106, 498 )
 scale = Vector2( 0.9, 1 )
 points = PoolVector2Array( -81, 201, 202, 201, 485, 201 )
 width = 5.0
@@ -39,15 +35,15 @@ end_cap_mode = 2
 
 [node name="StatisticsTitle" type="Label" parent="."]
 margin_left = 33.0
-margin_top = 512.0
+margin_top = 353.0
 margin_right = 2394.0
-margin_bottom = 1132.0
+margin_bottom = 973.0
 rect_scale = Vector2( 0.085, 0.085 )
 custom_fonts/font = SubResource( 1 )
 text = "Statistik"
 
 [node name="StatBoxes" type="Node2D" parent="."]
-position = Vector2( 33, 463 )
+position = Vector2( 33, 304 )
 scale = Vector2( 0.085, 0.085 )
 
 [node name="Statbox1" type="Sprite" parent="StatBoxes"]
@@ -140,9 +136,9 @@ align = 1
 
 [node name="BooksReadStat" type="Label" parent="StatLabels"]
 margin_left = 11.0
-margin_top = 602.0
+margin_top = 443.0
 margin_right = 2372.0
-margin_bottom = 1222.0
+margin_bottom = 1063.0
 rect_scale = Vector2( 0.085, 0.085 )
 custom_fonts/font = SubResource( 1 )
 text = "int"
@@ -150,9 +146,9 @@ align = 1
 
 [node name="ChaptersReadStat" type="Label" parent="StatLabels"]
 margin_left = 187.0
-margin_top = 602.0
+margin_top = 443.0
 margin_right = 2548.0
-margin_bottom = 1222.0
+margin_bottom = 1063.0
 rect_scale = Vector2( 0.085, 0.085 )
 custom_fonts/font = SubResource( 1 )
 text = "int"
@@ -160,9 +156,9 @@ align = 1
 
 [node name="StreakStat" type="Label" parent="StatLabels"]
 margin_left = 363.0
-margin_top = 602.0
+margin_top = 443.0
 margin_right = 2724.0
-margin_bottom = 1222.0
+margin_bottom = 1063.0
 rect_scale = Vector2( 0.085, 0.085 )
 custom_fonts/font = SubResource( 1 )
 text = "int"
@@ -170,9 +166,9 @@ align = 1
 
 [node name="xpStat" type="Label" parent="StatLabels"]
 margin_left = 11.0
-margin_top = 731.0
+margin_top = 572.0
 margin_right = 2372.0
-margin_bottom = 1351.0
+margin_bottom = 1192.0
 rect_scale = Vector2( 0.085, 0.085 )
 custom_fonts/font = SubResource( 1 )
 text = "int"
@@ -180,9 +176,9 @@ align = 1
 
 [node name="TasksCompletedStat" type="Label" parent="StatLabels"]
 margin_left = 187.0
-margin_top = 731.0
+margin_top = 572.0
 margin_right = 2548.0
-margin_bottom = 1351.0
+margin_bottom = 1192.0
 rect_scale = Vector2( 0.085, 0.085 )
 custom_fonts/font = SubResource( 1 )
 text = "int"
@@ -190,10 +186,14 @@ align = 1
 
 [node name="AverageChaptersDailyStat" type="Label" parent="StatLabels"]
 margin_left = 363.0
-margin_top = 731.0
+margin_top = 572.0
 margin_right = 2724.0
-margin_bottom = 1351.0
+margin_bottom = 1192.0
 rect_scale = Vector2( 0.085, 0.085 )
 custom_fonts/font = SubResource( 1 )
 text = "int"
 align = 1
+
+[node name="HTTPGetStats" type="HTTPRequest" parent="."]
+
+[connection signal="request_completed" from="HTTPGetStats" to="." method="on_stats_response"]

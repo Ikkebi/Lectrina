@@ -1,8 +1,6 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=2 format=2]
 
 [ext_resource path="res://Scenes/Login.gd" type="Script" id=1]
-[ext_resource path="res://Scenes/LoginButton.gd" type="Script" id=2]
-[ext_resource path="res://Scenes/LoginRequest.gd" type="Script" id=3]
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -37,19 +35,23 @@ margin_bottom = 60.0
 margin_top = 64.0
 margin_right = 485.0
 margin_bottom = 88.0
+secret = true
 
 [node name="LoginButton" type="Button" parent="ColorRect/VBoxContainer"]
 margin_top = 92.0
 margin_right = 485.0
 margin_bottom = 112.0
-script = ExtResource( 2 )
 
 [node name="RegisterButton" type="Button" parent="ColorRect/VBoxContainer"]
 margin_top = 116.0
 margin_right = 485.0
 margin_bottom = 136.0
 
-[node name="HTTPRequest" type="HTTPRequest" parent="."]
-script = ExtResource( 3 )
+[node name="HTTPLoginRequest" type="HTTPRequest" parent="."]
 
-[connection signal="pressed" from="ColorRect/VBoxContainer/LoginButton" to="." method="_on_LoginButton_pressed"]
+[node name="HTTPRegisterRequest" type="HTTPRequest" parent="."]
+
+[connection signal="pressed" from="ColorRect/VBoxContainer/LoginButton" to="." method="on_login_pressed"]
+[connection signal="pressed" from="ColorRect/VBoxContainer/RegisterButton" to="." method="on_register_pressed"]
+[connection signal="request_completed" from="HTTPLoginRequest" to="." method="on_login_response"]
+[connection signal="request_completed" from="HTTPRegisterRequest" to="." method="on_register_response"]

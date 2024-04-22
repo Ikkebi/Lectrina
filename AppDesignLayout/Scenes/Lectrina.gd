@@ -39,7 +39,6 @@ func _ready():
 	
 	# Initially hide all scenes except the home scene
 	_on_HomeNav_pressed()
-	
 	load_book(active_book_id)
 
 func hide_all_scenes():
@@ -81,6 +80,15 @@ func _on_ProfileNav_pressed():
 	Profile.visible = true
 
 func load_book(book_id: int):
+	active_book_id = book_id
+	var invisible_icon = load("res://Scenes/temp (filtrer gennem inden aflevering for ubrugte assets)/ChapterButtonInvisible.png")
+	for i in range(20):
+		var btn: Button = get_node("HomeScreen/ScrollContainer/GridContainer/Chapter"+str(i+1))
+		if btn.is_connected("pressed", self, "on_chapter_pressed"):
+			btn.disconnect("pressed", self, "on_chapter_pressed")
+		
+		btn.icon = invisible_icon
+	
 	$HTTPGetBook.request(
 		"https://lectrina.dk/books/getbook.php?book_id=" + str(book_id),
 		[
@@ -105,13 +113,8 @@ func on_load_book_request(result, response_code, headers, body):
 
 	$TopBar/BookName.text = response["name"]
 	
-	var default_icon = preload("res://Scenes/temp (filtrer gennem inden aflevering for ubrugte assets)/ChapterButton.png")
-	var completed_icon = preload("res://Scenes/temp (filtrer gennem inden aflevering for ubrugte assets)/ChapterButtonCompleted.png")
-	
-	for i in range(20):
-		var btn: Button = get_node("HomeScreen/ScrollContainer/GridContainer/Chapter"+str(i+1))
-		if btn.is_connected("pressed", self, "on_chapter_pressed"):
-			btn.disconnect("pressed", self, "on_chapter_pressed")
+	var default_icon = load("res://Scenes/temp (filtrer gennem inden aflevering for ubrugte assets)/ChapterButton.png")
+	var completed_icon = load("res://Scenes/temp (filtrer gennem inden aflevering for ubrugte assets)/ChapterButtonCompleted.png")
 	
 	for i in range(len(response["chapters"])):
 		var btn: Button = get_node("HomeScreen/ScrollContainer/GridContainer/Chapter"+str(i+1))

@@ -1,15 +1,23 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scenes/temp (filtrer gennem inden aflevering for ubrugte assets)/TrainingQuestion.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/temp (filtrer gennem inden aflevering for ubrugte assets)/TrainingAnswer.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/Training.gd" type="Script" id=3]
+[ext_resource path="res://Scenes/temp (filtrer gennem inden aflevering for ubrugte assets)/UniversBold.ttf" type="DynamicFontData" id=4]
 
 [sub_resource type="StyleBoxEmpty" id=1]
+
+[sub_resource type="DynamicFont" id=2]
+size = 45
+outline_size = 2
+font_data = ExtResource( 4 )
 
 [node name="Training" type="Control"]
 margin_right = 40.0
 margin_bottom = 40.0
+script = ExtResource( 3 )
 
-[node name="Button" type="Button" parent="."]
+[node name="Question" type="Button" parent="."]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -21,9 +29,10 @@ margin_bottom = 533.0
 custom_styles/focus = SubResource( 1 )
 icon = ExtResource( 1 )
 flat = true
+icon_align = 1
 expand_icon = true
 
-[node name="Button2" type="Button" parent="."]
+[node name="Answer1" type="Button" parent="."]
 margin_left = 70.0
 margin_top = 553.0
 margin_right = 289.0
@@ -31,9 +40,10 @@ margin_bottom = 634.0
 custom_styles/focus = SubResource( 1 )
 icon = ExtResource( 2 )
 flat = true
+icon_align = 1
 expand_icon = true
 
-[node name="Button3" type="Button" parent="."]
+[node name="Answer2" type="Button" parent="."]
 margin_left = 289.0
 margin_top = 553.0
 margin_right = 508.0
@@ -41,9 +51,10 @@ margin_bottom = 634.0
 custom_styles/focus = SubResource( 1 )
 icon = ExtResource( 2 )
 flat = true
+icon_align = 1
 expand_icon = true
 
-[node name="Button4" type="Button" parent="."]
+[node name="Answer3" type="Button" parent="."]
 margin_left = 290.0
 margin_top = 657.0
 margin_right = 509.0
@@ -51,9 +62,10 @@ margin_bottom = 738.0
 custom_styles/focus = SubResource( 1 )
 icon = ExtResource( 2 )
 flat = true
+icon_align = 1
 expand_icon = true
 
-[node name="Button5" type="Button" parent="."]
+[node name="Answer4" type="Button" parent="."]
 margin_left = 71.0
 margin_top = 657.0
 margin_right = 290.0
@@ -61,4 +73,31 @@ margin_bottom = 738.0
 custom_styles/focus = SubResource( 1 )
 icon = ExtResource( 2 )
 flat = true
+icon_align = 1
 expand_icon = true
+
+[node name="HTTPGetAssignment" type="HTTPRequest" parent="."]
+
+[node name="IndicatorLabel" type="Label" parent="."]
+margin_left = 89.0
+margin_top = 77.0
+margin_right = 483.0
+margin_bottom = 241.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+align = 1
+valign = 1
+autowrap = true
+
+[node name="HTTPCompleteAssignment" type="HTTPRequest" parent="."]
+
+[node name="ResetTextTimer" type="Timer" parent="."]
+
+[connection signal="pressed" from="Answer1" to="." method="on_answer_pressed" binds= [ 1 ]]
+[connection signal="pressed" from="Answer2" to="." method="on_answer_pressed" binds= [ 2 ]]
+[connection signal="pressed" from="Answer3" to="." method="on_answer_pressed" binds= [ 3 ]]
+[connection signal="pressed" from="Answer4" to="." method="on_answer_pressed" binds= [ 4 ]]
+[connection signal="request_completed" from="HTTPGetAssignment" to="." method="on_assignment_response"]
+[connection signal="request_completed" from="HTTPCompleteAssignment" to="." method="on_assignment_complete_response"]
+[connection signal="timeout" from="ResetTextTimer" to="." method="on_reset_text_timeout"]
