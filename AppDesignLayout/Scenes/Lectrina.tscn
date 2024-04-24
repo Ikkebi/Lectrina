@@ -1,11 +1,10 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Scenes/Books.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Training.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Profile.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/HomeScreen.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Leaderboard.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Scenes/temp (filtrer gennem inden aflevering for ubrugte assets)/Prototype.png" type="Texture" id=6]
 [ext_resource path="res://Scenes/temp (filtrer gennem inden aflevering for ubrugte assets)/BooksNav.png" type="Texture" id=7]
 [ext_resource path="res://Scenes/temp (filtrer gennem inden aflevering for ubrugte assets)/HomeNav.png" type="Texture" id=8]
 [ext_resource path="res://Scenes/temp (filtrer gennem inden aflevering for ubrugte assets)/TrainingNav.png" type="Texture" id=9]
@@ -193,11 +192,6 @@ align = 2
 
 [node name="Reading" parent="." instance=ExtResource( 15 )]
 visible = false
-
-[node name="Prototype" type="Sprite" parent="."]
-position = Vector2( 1833.17, 515.442 )
-scale = Vector2( 1.88355, 1.88355 )
-texture = ExtResource( 6 )
 
 [node name="HTTPGetBook" type="HTTPRequest" parent="."]
 
