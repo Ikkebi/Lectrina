@@ -56,6 +56,10 @@ func on_login_response(result, response_code, headers, body):
 	
 	response = response.result;
 
+	if not response["status"]:
+		print("invalid login")
+		return
+
 	switch_scene(
 		response["token"],
 		response["streak"],
