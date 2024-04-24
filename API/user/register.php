@@ -21,6 +21,22 @@ if (!isset($_POST["username"]) || !isset($_POST["password"])) {
 $username = $_POST["username"];
 $password = $_POST["password"];
 
+if (count($username) < 3) {
+    echo json_encode([
+        "status" => false,
+        "message" => "Username must be minimum 3 characters",
+    ]);
+    die();
+}
+
+if (count($password) < 3) {
+    echo json_encode([
+        "status" => false,
+        "message" => "password must be minimum 3 characters",
+    ]);
+    die();
+}
+
 $statement = database()->prepare("SELECT * FROM user WHERE username = ?");
 $statement->execute([$username]);
 
