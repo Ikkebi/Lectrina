@@ -1,8 +1,8 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scenes/ScrollContainer.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/temp (filtrer gennem inden aflevering for ubrugte assets)/UniversBold.ttf" type="DynamicFontData" id=2]
-[ext_resource path="res://icon.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/temp (filtrer gennem inden aflevering for ubrugte assets)/exit.png" type="Texture" id=3]
 [ext_resource path="res://Scenes/Reading.gd" type="Script" id=4]
 [ext_resource path="res://Scenes/ChapterAssignment.tscn" type="PackedScene" id=5]
 
@@ -17,6 +17,26 @@ size = 22
 use_mipmaps = true
 use_filter = true
 font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 20
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.301961, 0.631373, 0.662745, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0, 0, 0, 1 )
+expand_margin_left = 5.0
+expand_margin_right = 5.0
+expand_margin_top = 5.0
+expand_margin_bottom = 5.0
 
 [node name="Reading" type="Control"]
 margin_right = 576.0
@@ -70,22 +90,26 @@ fit_content_height = true
 [node name="Text" type="RichTextLabel" parent="ScrollContainer/HBoxContainer/VBoxContainer"]
 margin_top = 151.0
 margin_right = 536.0
-margin_bottom = 904.0
+margin_bottom = 895.0
 mouse_filter = 1
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 custom_fonts/normal_font = SubResource( 1 )
 bbcode_enabled = true
-bbcode_text = "[fill]sd[/fill]"
+bbcode_text = "[fill][/fill]"
 meta_underlined = false
-text = "sd"
 fit_content_height = true
 
 [node name="FinishBtn" type="Button" parent="ScrollContainer/HBoxContainer/VBoxContainer"]
-margin_top = 954.0
+margin_top = 945.0
 margin_right = 536.0
 margin_bottom = 974.0
+custom_fonts/font = SubResource( 3 )
+custom_styles/hover = SubResource( 4 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/focus = SubResource( 4 )
+custom_styles/normal = SubResource( 4 )
 text = "Done reading"
 
 [node name="Control2" type="Control" parent="ScrollContainer/HBoxContainer/VBoxContainer"]
@@ -98,15 +122,17 @@ margin_left = 576.0
 margin_right = 576.0
 margin_bottom = 1024.0
 
+[node name="Exit" type="Button" parent="."]
+margin_left = 470.0
+margin_top = 30.0
+margin_right = 536.0
+margin_bottom = 95.0
+icon = ExtResource( 3 )
+flat = true
+expand_icon = true
+
 [node name="ChapterAssignment" parent="." instance=ExtResource( 5 )]
 visible = false
-
-[node name="Exit" type="Button" parent="."]
-margin_left = 473.0
-margin_top = 8.0
-margin_right = 549.0
-margin_bottom = 78.0
-icon = ExtResource( 3 )
 
 [node name="HTTPGetChapter" type="HTTPRequest" parent="."]
 
