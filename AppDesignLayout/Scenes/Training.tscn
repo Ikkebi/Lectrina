@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scenes/temp (filtrer gennem inden aflevering for ubrugte assets)/TrainingQuestion.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/temp (filtrer gennem inden aflevering for ubrugte assets)/TrainingAnswer.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/Training.gd" type="Script" id=3]
 [ext_resource path="res://Scenes/temp (filtrer gennem inden aflevering for ubrugte assets)/UniversBold.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://fontstyle.tres" type="DynamicFont" id=5]
 
 [sub_resource type="StyleBoxEmpty" id=1]
 
@@ -26,9 +27,11 @@ margin_left = 50.0
 margin_top = 208.0
 margin_right = 488.0
 margin_bottom = 533.0
+custom_fonts/font = ExtResource( 5 )
 custom_styles/focus = SubResource( 1 )
 icon = ExtResource( 1 )
 flat = true
+clip_text = true
 icon_align = 1
 expand_icon = true
 
@@ -37,9 +40,11 @@ margin_left = 70.0
 margin_top = 553.0
 margin_right = 289.0
 margin_bottom = 634.0
+custom_fonts/font = ExtResource( 5 )
 custom_styles/focus = SubResource( 1 )
 icon = ExtResource( 2 )
 flat = true
+clip_text = true
 icon_align = 1
 expand_icon = true
 
@@ -48,9 +53,11 @@ margin_left = 289.0
 margin_top = 553.0
 margin_right = 508.0
 margin_bottom = 634.0
+custom_fonts/font = ExtResource( 5 )
 custom_styles/focus = SubResource( 1 )
 icon = ExtResource( 2 )
 flat = true
+clip_text = true
 icon_align = 1
 expand_icon = true
 
@@ -59,9 +66,11 @@ margin_left = 290.0
 margin_top = 657.0
 margin_right = 509.0
 margin_bottom = 738.0
+custom_fonts/font = ExtResource( 5 )
 custom_styles/focus = SubResource( 1 )
 icon = ExtResource( 2 )
 flat = true
+clip_text = true
 icon_align = 1
 expand_icon = true
 
@@ -70,9 +79,11 @@ margin_left = 71.0
 margin_top = 657.0
 margin_right = 290.0
 margin_bottom = 738.0
+custom_fonts/font = ExtResource( 5 )
 custom_styles/focus = SubResource( 1 )
 icon = ExtResource( 2 )
 flat = true
+clip_text = true
 icon_align = 1
 expand_icon = true
 
